@@ -1,1 +1,1 @@
-もっとも単純な node.js サンプルアプリケーション
+simple todo list
