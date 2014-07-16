@@ -40,7 +40,7 @@ router.use(function (req, res, next) {
 
 // home page
 router.get('/', function (req, res, next) {
-	// TODO: return client view
+	res.sendfile("./view/index.html");
 });
 
 // todo list
@@ -122,10 +122,13 @@ router.route('/lists/:todo_id')
 app.use('/todo', router);
 
 /*
- * home page
+ * other request
  */
 app.get('/', function(req, res) {
 	res.send('miu web server works!');
+});
+app.get('/view/*', function(req, res) {
+	res.sendfile("./view/" + req.params[0]);
 });
 
 /*

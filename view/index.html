@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<title>todo list</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js'></script>
+	<script src='/view/index.js'></script>
+</head>
+<body>
+	<div>
+		<h1>TODO List</h1>
+	</div>
+	<div>
+		<label>new: </label>
+		<input type='text' ng-model='todo_content' style='width: 250px;'>
+		<input type='button' value='add'>
+	</div>
+	<div>
+		<label>filter: </label>
+		<input type='text' ng-model='keyword' style='width: 200px;'/> (partial match)
+	</div>
+	<div>
+		<ul style='list-style-type: none;'>
+			<li ng-repeat='todo in todos'>
+				<div>
+					<input type='checkbox' ng-model=''>
+					<span>{{todo.content}}</span>
+					<input type='button' value='edit'>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
