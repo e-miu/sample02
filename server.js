@@ -122,7 +122,7 @@ router.route('/lists/:todo_id')
 app.use('/todo', router);
 
 /*
- * other request
+ * home page & client view
  */
 app.get('/', function(req, res) {
 	res.send('miu web server works!');
@@ -132,8 +132,8 @@ app.get('/view/*', function(req, res) {
 });
 
 /*
- * start server (port:8124, ip:localhost)
+ * start server
  */
-server.listen(settings.PORT, 'localhost', function () {
+server.listen(settings.PORT, function () {
 	console.log('Server running.');
 });
