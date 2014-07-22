@@ -7,28 +7,31 @@
 	<script src='/view/index.js'></script>
 </head>
 <body>
-	<div>
-		<h1>TODO List</h1>
-	</div>
-	<div>
-		<label>new: </label>
-		<input type='text' ng-model='todo_content' style='width: 250px;'>
-		<input type='button' value='add'>
-	</div>
-	<div>
-		<label>filter: </label>
-		<input type='text' ng-model='keyword' style='width: 200px;'/> (partial match)
-	</div>
-	<div>
-		<ul style='list-style-type: none;'>
-			<li ng-repeat='todo in todos'>
-				<div ng-class=''>
-					<input type='checkbox' ng-model=''>
-					<span>{{todo.content}}</span>
-					<input type='button' value='edit'>
-				</div>
-			</li>
-		</ul>
+	<div ng-controller='TodoCtrl'>
+		<div>
+			<h1>TODO List</h1>
+		</div>
+		<div>
+			<label>new: </label>
+			<input type='text' ng-model='todo_content'>
+			<input type='button' value='add'>
+		</div>
+		<hr class='stylish-line'>
+		<div>
+			<label>filter: </label>
+			<input type='text' ng-model='keyword' /> (partial match)
+		</div>
+		<div>
+			<ul style='list-style-type: none;'>
+				<li ng-repeat='todo in todos'>
+					<div ng-class=''>
+						<input type='checkbox' ng-model=''>
+						<span>{{todo.content}}</span><input type='text' value=''>
+						<input type='button' value='edit'>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </body>
 </html>
