@@ -30,7 +30,7 @@ require('./todo').start(app, express.Router());
  * context root & client view
  */
 app.get('/login', function (req, res) {
-	res.sendfile('views/login.html');
+	res.sendfile('view/login.html');
 });
 app.get('/', function(req, res) {
 	res.send('miu web server works!');
