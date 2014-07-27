@@ -27,7 +27,7 @@ router.use(function (req, res, next) {
 require('./todo').start(app, express.Router());
 
 /*
- * context root & client view
+ * context root, login, client files
  */
 app.get('/login', function (req, res) {
 	res.sendfile('view/login.html');
@@ -46,5 +46,5 @@ mongoose.connect('mongodb://localhost/miutodo');
  * start server
  */
 server.listen(settings.PORT, function () {
-	console.log('Server running.');
+	console.log('server running.');
 });
